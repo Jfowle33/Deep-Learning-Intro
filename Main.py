@@ -77,6 +77,7 @@ between both distributions.
 cross-entropy will have a BIGGER value than the entropy computed on the true distribution.
  
  H_p(q)-H(q) >= 0
+ Daniel Godoy-Understanding binary cross-entropy / log loss: a visual explanation
 '''
 ann.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
