@@ -51,6 +51,7 @@ ann = tf.keras.models.Sequential()
 # Adding the input layer and the first hidden layer
 ann.add(tf.keras.layers.Dense(units=6, activation='relu')) #rectified linear activation function
 #f(x) = max(0,x), more computationally efficient
+#units-number of neurons (input layer)
 
 # Adding the second hidden layer
 ann.add(tf.keras.layers.Dense(units=6, activation='relu')) #rectified linear activation function
@@ -63,6 +64,20 @@ ann.add(tf.keras.layers.Dense(units=1, activation='sigmoid')) #Logistic
 # Part 3 - Training the ANN
 
 # Compiling the ANN
+#Adam is a stochastic gradient descent optimization method
+'''
+Loss function: Entropy is a measure of the uncertainty associated with
+a given distribution q(y).
+    
+H_p(q) = -1/n /sum^n_{i=1} y_i * log(p(y_i)) + (1-y_i) * log(1-p(y_i))
+
+If we compute entropy like above, we are actually computing the cross-entropy 
+between both distributions.
+
+cross-entropy will have a BIGGER value than the entropy computed on the true distribution.
+ 
+ H_p(q)-H(q) >= 0
+'''
 ann.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
 # Training the ANN on the Training set
