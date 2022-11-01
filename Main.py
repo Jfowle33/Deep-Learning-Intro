@@ -2,7 +2,7 @@
 """
 Created on Wed Oct 12 13:18:23 2022
 
-@author: joefo
+@author: joefowler
 """
 import tensorflow as tf
 import pandas as pd
